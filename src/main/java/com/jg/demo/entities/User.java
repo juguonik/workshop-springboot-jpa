@@ -20,7 +20,9 @@ public class User implements Serializable{
 	private String email;
 	private String password;
 	
-
+	public User() {
+		
+	}
 
 	public User(Long id, String name, String email, String password) {
 		super();
