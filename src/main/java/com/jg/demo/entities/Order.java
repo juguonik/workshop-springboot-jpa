@@ -1,45 +1,43 @@
 package com.jg.demo.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.Instant;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_user")
-public class User implements Serializable{
+@Table(name = "tb_order")
+public class Order implements Serializable{
+	
 	private static final long serialVersionUID = 1L;
+	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
-	private String email;
-	private String password;
+	private Instant moment;
 	
 	
-	@OneToMany(mappedBy = "client")
-	private List<Order> orders = new ArrayList<>();
+	@ManyToOne
+	@JoinColumn(name = "client_id")
+	private User client;
 	
-	public User() {
+	public Order() {
 		
 	}
 
-	public User(Long id, String name, String email, String password) {
+	public Order(Long id, Instant moment, User client) {
 		super();
 		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.password = password;
+		this.moment = moment;
+		this.client = client;
 	}
-
-
 
 	public Long getId() {
 		return id;
@@ -49,35 +47,22 @@ public class User implements Serializable{
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public Instant getMoment() {
+		return moment;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMoment(Instant moment) {
+		this.moment = moment;
 	}
 
-	public String getEmail() {
-		return email;
+	public User getClient() {
+		return client;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setClient(User client) {
+		this.client = client;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	public List<Order> getOrders() {
-		return orders;
-	}
-
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -94,7 +79,7 @@ public class User implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
+		Order other = (Order) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -102,7 +87,7 @@ public class User implements Serializable{
 			return false;
 		return true;
 	}
+	
+	
 
-	
-	
 }
