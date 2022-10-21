@@ -1,5 +1,7 @@
 <h1 align="center"> Web services project using Spring Boot and JPA / Hibernate </h1>
-*Done on Professor Nélio Alves' [Java Course] (https://ibm-learning.udemy.com/course/java-curso-completo/)
+*Done on Professor Nélio Alves' <a href ="https://www.udemy.com/course/java-curso-completo/"> Java Course </a>
+
+
 
 ## :memo: Project specifications: 
 1. Created using Spring Boot Java;
