@@ -1,11 +1,11 @@
-<h1 align="center"> Projeto web services com Spring Boot e JPA / Hibernate </h1>
-*Realizado no curso de Java do Professor Nélio Alves.
+<h1 align="center"> Web services project using Spring Boot and JPA / Hibernate </h1>
+*Done on Professor Nélio Alves' [Java Course] (https://ibm-learning.udemy.com/course/java-curso-completo/)
 
-## :memo: Especificações: 
-1. Criação do projeto com Spring Boot Java;
-2. Implementação do modelo de domínio;
-3. Estruturação de camadas lógicas: resource, service, repository;
-4. Configuração do banco de dados de teste (H2);
-5. Povoamento do banco de dados;
+## :memo: Project specifications: 
+1. Created using Spring Boot Java;
+2. Implementation of Domain Model;
+3. Layers: resource, service, repository;
+4. Database configuration (H2 - test profile);
+5. Database seeding;
 6. CRUD - Create, Retrieve, Update, Delete;
-7. Tratamento de exceções.
+7. Exception handling.
